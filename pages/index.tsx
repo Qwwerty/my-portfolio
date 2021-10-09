@@ -1,36 +1,73 @@
-import Image from 'next/image'
-import {Header} from '../components/Header'
-
+import {GetServerSideProps} from "next";
 import styles from '../styles/home.module.scss'
 
-export default function Home() {
+import {Header} from '../components/Header'
+import {SectionInfo} from '../components/SectionInfo'
+import {About} from '../components/About'
+
+import {FiCpu} from 'react-icons/fi'
+
+
+interface HomeProps {
+  myAge: number;
+}
+
+
+export default function Home({myAge}: HomeProps) {
   return (
     <>
-      <Header/>
-
       <div className={styles.container}>
-        <div className={`${styles.containerInfo} animate__animated animate__backInUp`}>
-          <div className={styles.info}>
-            <img src="/images/borderimage.svg" width={189} height={203} alt="border-image"/>
-            <div>
-              <div></div>
-              <h5>DESENVOLVEDOR FULLSTACK</h5>
-              <h1>RHALF OLIVEIRA</h1>
+        <Header/>
 
-              <p>
-                Olá me chamo Paulo Henrique atualmente tenho 18 anos sou de São Bernardo do Campo, São Paulo, e a minha
-                maior paixão é programar, lembro que comecei com apenas 9 anos quando começava criar pequenos sites
-                apenas
-                por diversão, e hoje virou meu trabalho.
-              </p>
-
-              <a href="#">rhalfsouza@hotmail.com</a>
+        <div>
+          <div className={`${styles.containerInfo} animate__animated animate__backInUp`}>
+            <SectionInfo/>
+            <div className={styles.containerInfoImg}>
+              <img width={336} height={283} src="/images/undraw_Master_plan_re_jvit 1.svg" alt="Master_plan"/>
             </div>
           </div>
 
-          <Image width={336} height={283} src="/images/undraw_Master_plan_re_jvit 1.svg" alt="Master_plan"/>
+          <About myAge={myAge}/>
+
+          <div className={`${styles.containerTech} animate__animated animate__backInLeft`}>
+            <div>
+              <h4>
+                <FiCpu/>
+                Tecnologias
+              </h4>
+            </div>
+
+            <div className={styles.containerImg}>
+              <img src="/images/technologies/reactjs.png" />
+              <img src="/images/technologies/nodejs.png" />
+              <img src="/images/technologies/mysql.png" />
+              <img src="/images/technologies/typescript.png" />
+              <img src="/images/technologies/javascript.png" />
+              <img src="/images/technologies/css.png" />
+              <img src="/images/technologies/html.png" />
+              <img src="/images/technologies/redis.png" />
+              <img src="/images/technologies/sequelize.png" />
+              <img src="/images/technologies/express.png" />
+              <img src="/images/technologies/restapi.png" />
+              <img src="/images/technologies/styledcomponents.png" />
+              <img src="/images/technologies/redux.png" />
+              <img src="/images/technologies/vuejs.png" width={25} />
+              <img src="/images/technologies/vuetify.png" width={30} />
+              <img src="/images/technologies/sass.png" width={30} />
+            </div>
+
+          </div>
         </div>
       </div>
     </>
   )
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    props: {
+      myAge: Number(new Date().getFullYear()) - 1998
+    }
+  }
+}
+
