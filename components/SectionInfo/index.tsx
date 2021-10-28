@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 export function SectionInfo() {
   return (
     <div className={styles.container}>
-      <img src="/images/borderimage.svg" width={189} height={203} alt="border-image"/>
+      <img src="/images/borderimage.png" width={189} height={203} alt="border-image"/>
       <div>
         <div></div>
         <h5>DESENVOLVEDOR FULLSTACK</h5>

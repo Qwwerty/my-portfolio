@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/global.scss'
 import 'animate.css'
 

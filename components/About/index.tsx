@@ -7,10 +7,6 @@ interface AboutProps {
 }
 
 export function About ({myAge}: AboutProps) {
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
   return (
     <div className={`${styles.container} animate__animated animate__backInUp`}>
       <section>

@@ -15,7 +15,6 @@
 }
 
 .containerTech {
-  padding: 4rem 0;
   width: 100%;
   
   div:first-child {
@@ -47,6 +46,28 @@
       margin-top: 1rem;
       & + img {
         margin-right: 2rem;
+      }
+    }
+  }
+}
+
+.containerProject {
+  padding: 4rem 0;
+  width: 100%;
+
+  div:first-child {
+    margin-bottom: 2rem;
+    max-width: 450px;
+
+    h4 {
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: var(--white);
+      svg {
+        color: var(--green-200);
+        margin-right: 1rem;
       }
     }
   }
